@@ -112,6 +112,18 @@ bun scripts/grok.ts \
 - `OPENROUTER_API_KEY` (required) - Your OpenRouter API key
 - `GROK_MODEL` (optional) - Override model (default: `x-ai/grok-4`)
 
+### Optional Hermes Tweet Context
+
+Hermes Agent users can pair this skill with [Hermes Tweet](https://github.com/Xquik-dev/hermes-tweet) when they need deterministic public X/Twitter reads before or after a Grok Live Search query. Keep Grok as the Live Search path, and use Hermes Tweet only for public tweet URLs, threads, users, trends, or keyword context that should be fetched through Hermes tools.
+
+```bash
+export XQUIK_API_KEY="..."
+# Leave unset unless a user explicitly approves posting or account actions.
+# export HERMES_TWEET_ENABLE_ACTIONS=true
+```
+
+With `HERMES_TWEET_ENABLE_ACTIONS` unset, Hermes Tweet stays a read-context companion for this workflow.
+
 **Constraints:**
 - `--include` and `--exclude` are mutually exclusive
 - Dates must be valid calendar dates in `YYYY-MM-DD` format

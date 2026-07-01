@@ -47,6 +47,15 @@ Use this Skill whenever the user asks for trends, activity, examples, or evidenc
 
 - Output is concise JSON: `summary`, `citations` (tweet URLs), and `usage`. Paste a short synthesis with linked tweets.
 
+## Optional Hermes Tweet Context
+
+When this skill runs inside Hermes Agent, use [Hermes Tweet](https://github.com/Xquik-dev/hermes-tweet) as an optional public-read companion. Grok remains the Live Search and synthesis path. Hermes Tweet is useful for direct tweet URL reads, thread checks, user context, trend context, or keyword context that should be fetched as structured Hermes tool output.
+
+Requirements:
+- Set `XQUIK_API_KEY` before using Hermes Tweet read tools.
+- Leave `HERMES_TWEET_ENABLE_ACTIONS` unset for research-only workflows.
+- Enable actions only when the user explicitly asks for posting or account actions.
+
 ## Defaults & notes
 - Live Search `mode` defaults to `auto`; use `on` for explicit "search X now".
 - If user gives handles, pass them via `--include` (or `--exclude`).
